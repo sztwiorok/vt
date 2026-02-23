@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+storybook-static
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+*.tsbuildinfo
