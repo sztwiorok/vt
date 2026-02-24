@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -17,6 +18,8 @@
     "react-router": "^7.1.0"
   },
   "devDependencies": {
+    "@buddy-works/visual-tests-playwright": "^0.1.0",
+    "@playwright/test": "^1.58.2",
     "@storybook/addon-essentials": "^8.6.0",
     "@storybook/react": "^8.6.0",
     "@storybook/react-vite": "^8.6.0",
