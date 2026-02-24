@@ -19,11 +19,11 @@ const statusOptions = [
 
 export function TaskCard({ task, onDelete, onStatusChange }: TaskCardProps) {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex items-start justify-between gap-2 mb-3">
         <Link
           to={`/tasks/${task.id}`}
-          className="text-base font-semibold text-gray-900 hover:text-primary-600 transition-colors line-clamp-2"
+          className="text-base font-semibold text-gray-900 hover:text-primary-600 transition-colors line-clamp-2 dark:text-gray-100"
         >
           {task.title}
         </Link>
@@ -33,7 +33,7 @@ export function TaskCard({ task, onDelete, onStatusChange }: TaskCardProps) {
       </div>
 
       {task.description && (
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{task.description}</p>
+        <p className="text-sm text-gray-600 mb-3 line-clamp-2 dark:text-gray-400">{task.description}</p>
       )}
 
       <div className="flex items-center gap-2 mb-3">
@@ -42,7 +42,7 @@ export function TaskCard({ task, onDelete, onStatusChange }: TaskCardProps) {
       </div>
 
       <div className="flex items-center justify-between gap-2">
-        <span className="text-xs text-gray-500">{formatDate(task.createdAt)}</span>
+        <span className="text-xs text-gray-500 dark:text-gray-400">{formatDate(task.createdAt)}</span>
         <Select
           options={statusOptions}
           value={task.status}

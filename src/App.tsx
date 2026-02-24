@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { useTasks } from './hooks/useTasks';
+import { useDarkMode } from './hooks/useDarkMode';
 import { TaskListPage } from './pages/TaskListPage';
 import { TaskDetailPage } from './pages/TaskDetailPage';
 
@@ -16,6 +17,8 @@ export default function App() {
     getTask,
   } = useTasks();
 
+  const [isDark, toggleDark] = useDarkMode();
+
   return (
     <BrowserRouter>
       <Routes>
@@ -31,6 +34,8 @@ export default function App() {
               onAddTask={addTask}
               onDeleteTask={deleteTask}
               onStatusChange={(id, status) => updateTask({ id, status })}
+              isDark={isDark}
+              onToggleDark={toggleDark}
             />
           }
         />

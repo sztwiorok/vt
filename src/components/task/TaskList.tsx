@@ -10,9 +10,9 @@ export interface TaskListProps {
 export function TaskList({ tasks, onDelete, onStatusChange }: TaskListProps) {
   if (tasks.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-16 text-gray-500">
+      <div className="flex flex-col items-center justify-center py-16 text-gray-500 dark:text-gray-400">
         <svg
-          className="w-16 h-16 mb-4 text-gray-300"
+          className="w-16 h-16 mb-4 text-gray-300 dark:text-gray-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

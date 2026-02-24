@@ -3,9 +3,9 @@ import { cn } from '../../lib/utils';
 
 const variantClasses = {
   primary: 'bg-primary-600 hover:bg-primary-700 text-white',
-  secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800',
+  secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200',
   danger: 'bg-danger-600 hover:bg-danger-700 text-white',
-  ghost: 'hover:bg-gray-100 text-gray-700',
+  ghost: 'hover:bg-gray-100 text-gray-700 dark:hover:bg-gray-800 dark:text-gray-300',
 } as const;
 
 const sizeClasses = {
@@ -26,7 +26,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled}
         className={cn(
-          'rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2',
+          'rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 dark:ring-offset-gray-900',
           variantClasses[variant],
           sizeClasses[size],
           disabled && 'opacity-50 cursor-not-allowed',

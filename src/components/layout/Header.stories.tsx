@@ -13,3 +13,10 @@ export default meta;
 type Story = StoryObj<typeof Header>;
 
 export const Default: Story = {};
+
+export const WithDarkToggle: Story = {
+  args: {
+    isDark: false,
+    onToggleDark: () => console.log('Toggle dark mode'),
+  },
+};

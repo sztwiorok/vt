@@ -15,6 +15,8 @@ interface TaskListPageProps {
   onAddTask: (input: CreateTaskInput) => void;
   onDeleteTask: (id: string) => void;
   onStatusChange: (id: string, status: TaskStatus) => void;
+  isDark?: boolean;
+  onToggleDark?: () => void;
 }
 
 export function TaskListPage({
@@ -26,12 +28,14 @@ export function TaskListPage({
   onAddTask,
   onDeleteTask,
   onStatusChange,
+  isDark,
+  onToggleDark,
 }: TaskListPageProps) {
   const [showForm, setShowForm] = useState(false);
 
   return (
     <>
-      <Header onAddTask={() => setShowForm(true)} />
+      <Header onAddTask={() => setShowForm(true)} isDark={isDark} onToggleDark={onToggleDark} />
       <PageLayout>
         <div className="space-y-6">
           <TaskFilters
@@ -49,8 +53,8 @@ export function TaskListPage({
 
         {showForm && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-            <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-lg mx-4">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">New Task</h2>
+            <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-lg mx-4 dark:bg-gray-800">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">New Task</h2>
               <TaskForm
                 onSubmit={(data) => {
                   onAddTask(data);

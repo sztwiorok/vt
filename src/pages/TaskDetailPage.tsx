@@ -28,8 +28,8 @@ export function TaskDetailPage({
     return (
       <PageLayout>
         <div className="text-center py-12">
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Task not found</h2>
-          <p className="text-gray-500 mb-4">The task you're looking for doesn't exist.</p>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Task not found</h2>
+          <p className="text-gray-500 dark:text-gray-400 mb-4">The task you're looking for doesn't exist.</p>
           <button
             onClick={() => navigate('/')}
             className="text-primary-600 hover:text-primary-700 font-medium"
@@ -45,7 +45,7 @@ export function TaskDetailPage({
     return (
       <PageLayout>
         <div className="max-w-lg">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Edit Task</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Edit Task</h2>
           <TaskForm
             initialData={task}
             onSubmit={(data: CreateTaskInput) => {
