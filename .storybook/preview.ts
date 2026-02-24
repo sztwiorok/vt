@@ -31,6 +31,7 @@ const preview: Preview = {
     (Story, context) => {
       const theme = context.globals.theme || 'light';
       document.documentElement.classList.toggle('dark', theme === 'dark');
+      document.documentElement.classList.toggle('light', theme === 'light');
       return Story();
     },
   ],
