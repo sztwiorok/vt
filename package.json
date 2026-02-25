@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "tsc --noEmit",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:visual": "vite & sleep 2 && npx playwright test"
   },
   "dependencies": {
     "react": "^19.0.0",
